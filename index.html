@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Invoice</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="invoice">
+
+  <div class="header">
+    <h2 id="invTitle">Tax Invoice</h2>
+    <h3 id="invTitleAr">فاتورة ضريبية</h3>
+
+    <div class="invoice-switch">
+      <label><input type="radio" name="invType" value="tax"> Tax Invoice</label>
+      <label><input type="radio" name="invType" value="simplified"> Simplified Tax Invoice</label>
+    </div>
+
+    Invoice No: <b id="invoiceNo"></b> |
+    Date: <b id="date"></b>
+  </div>
+
+  <button onclick="openSettings()">⚙ Settings</button>
+  <button onclick="openHistory()">📂 Invoice History</button>
+
+  <div class="row">
+    <div class="box">
+      <h4>Seller | البائع</h4>
+      <input id="seller" placeholder="Seller Name">
+      <input id="sellerCity" placeholder="City">
+      <input id="vatno" placeholder="VAT Number">
+    </div>
+
+    <div class="box">
+      <h4>Customer | العميل</h4>
+      <input id="customerName" placeholder="Customer Name">
+      <input id="customerAddress" placeholder="Address">
+      <input id="customerMobile" placeholder="Mobile">
+    </div>
+  </div>
+
+  <table id="items">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <button onclick="addRow()">➕ Add Item</button>
+
+  <div class="totals">
+    <div>Subtotal: <span id="sub">0.00</span></div>
+    <div>VAT: <span id="vat">0.00</span></div>
+    <div><b>Total: <span id="total">0.00</span></b></div>
+  </div>
+
+  <canvas id="qr"></canvas><br>
+
+  <button onclick="saveInvoice()">💾 Save</button>
+  <button onclick="window.print()">🖨 Print</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

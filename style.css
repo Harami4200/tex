@@ -1,0 +1,72 @@
+body{
+  font-family:Cairo, Tahoma, Arial, sans-serif;
+  background:#f5f5f5;
+}
+.invoice{
+  width:800px;
+  margin:20px auto;
+  background:#fff;
+  padding:20px;
+  border:1px solid #ccc;
+}
+.header{text-align:center}
+
+.invoice-switch{
+  margin:8px 0;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  font-size:14px;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  margin-top:15px;
+}
+.box{
+  width:48%;
+  border:1px solid #ccc;
+  padding:10px;
+}
+
+input{
+  width:100%;
+  padding:6px;
+  margin-top:5px;
+  height:32px;
+  font-family:Cairo, Tahoma, Arial, sans-serif;
+  text-align:center;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+}
+th,td{
+  border:1px solid #ccc;
+  padding:8px;
+  text-align:center;
+  font-family:Arial,"Segoe UI",Tahoma,sans-serif;
+}
+th{background:#eee}
+
+table input, table select{
+  font-family:Arial,"Segoe UI",Tahoma,sans-serif;
+}
+
+button{
+  margin-top:10px;
+  padding:8px 15px;
+  cursor:pointer;
+}
+
+.totals{
+  text-align:right;
+  margin-top:15px;
+}
+
+@media print{
+  button,.invoice-switch{display:none}
+}
